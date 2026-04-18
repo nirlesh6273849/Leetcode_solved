@@ -16,21 +16,11 @@
 16class Solution {
 17    public TreeNode invertTree(TreeNode root) {
 18        if(root==null) return null;
-19        if(root.left==null){
-20            root.left=invertTree(root.right);
-21            root.right=null;
-22        }
-23        else if(root.right==null){
-24            root.right=invertTree(root.left);
-25            root.left= null;
-26        }
-27            else if(root.left!=null && root.right!=null){
-28            TreeNode temp;
-29            temp=invertTree(root.left);
-30            root.left=invertTree(root.right);
-31            root.right=temp;
-32            }
-33
-34        return root;
-35    }
-36}
+19
+20        TreeNode temp=invertTree(root.left);
+21        root.left=invertTree(root.right);
+22        root.right=temp;
+23
+24        return root;
+25    }
+26}
