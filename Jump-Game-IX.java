@@ -14,14 +14,9 @@
 14        int[] res= new int[n];
 15        res[n-1]=leftbig[n-1];
 16        for(int i=n-2;i>-1;i--){
-17            if(leftbig[i]>rightmax[i+1]){
-18                res[i]=res[i+1];
-19            }
-20            else
-21            {
-22                res[i]=leftbig[i];
-23            }
-24        }
-25        return res;
-26    }
-27}
+17            if(leftbig[i]>rightmax[i+1]) res[i]=res[i+1];
+18            else res[i]=leftbig[i];
+19        }
+20        return res;
+21    }
+22}
