@@ -4,7 +4,7 @@ class Solution:
         res = []
 
         for i in range(len(nums) - 3):
-            # skip duplicate starting values
+            # skip duplicate starting values 
             if i > 0 and nums[i] == nums[i-1]:
                 continue
             
