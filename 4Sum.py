@@ -1,7 +1,7 @@
 1class Solution:
 2    def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
 3        nums.sort()
-4        res = []
+4        res = [] 
 5
 6        for i in range(len(nums) - 3):
 7            # skip duplicate starting values
