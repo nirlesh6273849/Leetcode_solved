@@ -1,0 +1,20 @@
+class Solution {
+    public boolean isGood(int[] nums) {
+        int n=nums.length;
+        HashSet<Integer> s= new HashSet<>();
+
+        if(n==1) return false;
+        boolean ex=false;
+        for(int i=0;i<n;i++){
+            if(nums[i]>=n || nums[i]<1) return false;
+            if(s.contains(nums[i])){
+                if(nums[i]!=n-1){
+                    return false;
+                }
+                ex=!ex;
+            }
+            s.add(nums[i]);
+        } 
+        return ex;
+    }
+}
