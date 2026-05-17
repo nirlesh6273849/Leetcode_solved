@@ -1,0 +1,13 @@
+class Solution {
+    boolean f(boolean[] s, int[] arr, int i) {
+        if (s[i]) return false;
+        if (arr[i] == 0) return true;
+        s[i] = true;
+        int v = arr[i], n = arr.length;
+        return (i + v < n && f(s, arr, i + v))
+             || (i - v >= 0 && f(s, arr, i - v));
+    }
+    public boolean canReach(int[] arr, int start) {
+        return f(new boolean[arr.length], arr, start);
+    }
+}
